@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Library Index</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Library</h1>
+    </header>
+    <a href="/search" class="btn-search">Search For More Books</a>
+    <a href="/client" class="btn-search">Client</a>
+    <main class="index-container">
+        <% books.forEach(book => { %>
+            <div class="book-card">
+                <img src="/public<%= book.image %>" alt="<%= book.title %>">
+                <h3><%= book.title %></h3>
+                <p><%= book.description.substring(0, 100) %>...</p>
+                <a href="/book/<%= book.title %>">Read More</a>
+            </div>
+        <% }) %>
+    </main>
+</body>
+</html>

@@ -1,67 +1,300 @@
-.book {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-.book img {
-    width: 300px;
-    height: 300px;
-}
-
-.highlight {
-    background-color: yellow;
-    font-weight: bold;
-}
-
-#results {
+header {
+    background-color: #007acc;
+    color: #fff;
+    padding: 1rem 2rem;
     text-align: center;
-    max-width: 800px;
-    margin: 20px auto;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
 
-/* ---- input */
-input[type=text],
-select {
+main {
+    padding: 2rem;
+}
+
+/* Index Page Styles */
+.index-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2% 10%;
+}
+
+.book-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: calc(33.33% - 3rem);
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin-bottom: 1.5rem;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+}
+
+.book-card img {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
+    height: 150px;
+    object-fit: cover;
+}
+
+.book-card h3 {
+    margin: -8px 0 0 0;
+    padding: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.book-card p {
+    padding: 1rem;
+    font-size: 0.8rem;
+    text-align: justify;
+}
+
+.book-card a {
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #007acc;
+    color: #fff;
+    text-decoration: none;
+    /* border-radius: 0 0 8px 8px; */
+    margin: 1rem;
+}
+
+.book-card a:hover {
+    background-color: #005fa3;
+}
+
+.btn-search{
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #007acc;
+    color: #fff;
+    text-decoration: none;
+    margin: 1rem 40%;
+}
+
+/* Search Page Styles */
+.search-container {
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.search-container input[type="text"] {
+    width: 80%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box;
 }
 
-input:focus {
-    border: none;
-    /* Removes the border */
-    outline: none;
-    /* Removes the default focus outline */
-}
-
-
-#searchButton {
-    width: 100%;
-    background-color: #4c84af;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+.search-container button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007acc;
+    color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-#searchButton:hover {
-    background-color: #3f6e92;
+.search-container button:hover {
+    background-color: #005fa3;
 }
 
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+.search-results {
+    margin: 2% 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.search-results .book-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 350px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin-bottom: 1.5rem;
+}
+
+.search-results .book-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.search-results .book-card h3 {
+    margin: -8px 0 0 0;
+    padding: 1rem;
+    font-size: 0.8rem;
     text-align: center;
+    background-color: #f1f1f1;
+}
+
+.search-results .book-card p {
+    padding: 1rem;
+    font-size: 0.8rem;
+    text-align: justify;
+}
+
+.search-results .book-card a {
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #007acc;
+    color: #fff;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+.search-results .book-card a:hover {
+    background-color: #005fa3;
+}
+
+
+/* Book Details Page Styles */
+.book-details {
     max-width: 800px;
     margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
+
+.book-details img {
+    width: 300px;
+    height: auto;
+    margin: 1rem auto; /* Add vertical spacing and center horizontally */
+    display: block; /* Ensure image is treated as a block element */
+}
+
+.book-details-content {
+    padding: 1rem;
+}
+
+.book-details-content h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.book-details-content p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.book-details-content a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #007acc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.book-details-content a:hover {
+    background-color: #005fa3;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+input[type="text"],
+textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* client table */
+table, td, th {  
+    border: 1px solid #b4b4b4;
+    text-align: left;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 85%;
+    margin: auto;
+  }
+  
+  th, td {
+    padding: 15px;
+  }
+  th {
+    background-color: #007acc;
+    color: white;
+  }
+  .btn-search2{
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #007acc;
+    color: #fff;
+    text-decoration: none;
+    margin: 0.5rem;
+    width: 5rem;
 }

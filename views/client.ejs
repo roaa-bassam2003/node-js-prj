@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books List</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>All Books</h1>
+    </header>
+    <main>
+        <a href="/book/insert" class="btn-search"><button>Insert New Book</button></a>
+        <table>
+            <thead>
+                <th>Cover Image</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>action</th>
+            </thead>
+            <% books.forEach(book => { %>
+            <tbody>  
+                <td><img src="/public<%= book.image %>" alt="<%= book.title %>" width="150px"></td>
+                <td><p><%= book.title %></p></td>
+                <td><p><%= book.description.substring(0, 100) %>...</p></td>
+                <td>
+                    <a href="/book/<%= book.title %>" class="btn-search2">View Book</a>
+                    <a href="/book/update/<%= book._id %>" class="btn-search2">Update</a>
+                    <a href="/book/delete/<%= book._id %>" class="btn-search2">Delete</a>
+                </td>
+            </tbody>
+            <% }) %>
+        </table>
+    </main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title><%= book.title %></title>
+</head>
+<body>
+    <header>
+        <h1><%= book.title %></h1>
+    </header>
+    <main class="book-details">
+        <img src="/public<%= book.image %>" alt="<%= book.title %>">
+        <div class="book-details-content">
+            <h2>Description</h2>
+            <p><%= book.description %></p>
+            <a href="/public<%= book.pdf %>" target="_blank">Download PDF</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Search Books</title>
+</head>
+<body>
+    <header>
+        <h1>Search for Books</h1>
+    </header>
+    <main class="search-container">
+        <form method="GET" action="/search">
+            <input type="text" name="query" placeholder="Enter keywords or title" required>
+            <button type="submit">Search</button>
+        </form>
+        <div class="search-results">
+            <% books.forEach(book => { %>
+                <div class="book-card">
+                    <img src="/public<%= book.image %>" alt="<%= book.title %>">
+                    <h3><%= book.title %></h3>
+                    <p><%= book.description.substring(0, 100) %>...</p>
+                    <a href="/book/<%= book.title %>">Read More</a>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+</body>
+</html>
