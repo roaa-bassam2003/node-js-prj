@@ -32,6 +32,10 @@ const storage = multer.diskStorage({
         } else if (fileType === 'application' && file.mimetype === 'application/pdf') {
             dir = path.join(__dirname, 'public', 'pdfs');
         }
+        
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true }); // Create directory if it doesn't exist
+        }
         cb(null, dir); // Store files in 'public/images' or 'public/pdfs' based on type
     },
     filename: (req, file, cb) => {
