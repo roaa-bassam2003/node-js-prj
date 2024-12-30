@@ -86,8 +86,7 @@ app.get('/search', async (req, res) => {
         const books = await collection.find({
             $or: [
                 { title: { $regex: query, $options: 'i' } },
-                { description: { $regex: query, $options: 'i' } },
-                { keywords: { $regex: query, $options: 'i' } }
+                { description: { $regex: query, $options: 'i' } }
             ]
         }).toArray();
 
